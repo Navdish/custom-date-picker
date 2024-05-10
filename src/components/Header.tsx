@@ -1,9 +1,8 @@
-import {Button, FormControl, Grid, IconButton, MenuItem, Select, SelectChangeEvent} from '@mui/material';
+import {Button, FormControl, Grid, IconButton, MenuItem, Select, Box, SelectChangeEvent, MenuList} from '@mui/material';
 import React from 'react';
 import ChevronLeft from '@mui/icons-material/ChevronLeft';
 import ChevronRight from '@mui/icons-material/ChevronRight';
 import {getMonth, getYear, setMonth, setYear} from 'date-fns';
-import Box from '@mui/material/Box';
 
 
 interface HeaderProps {
@@ -38,7 +37,6 @@ const Header: React.FunctionComponent<HeaderProps> = ({
     : ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'June', 'July', 'Aug', 'Sept', 'Oct', 'Nov', 'Dec'];
 
   const handleMonthChange = (event: React.MouseEvent<HTMLButtonElement, MouseEvent> | any) => {
-    console.log("month ---", event.target.value)
     setDate(setMonth(date, parseInt(event.target.value as string, 10)));
 
   };
@@ -69,15 +67,18 @@ const Header: React.FunctionComponent<HeaderProps> = ({
           <Select
             value={getMonth(date)}
             onChange={handleMonthChange}
-            MenuProps={{disablePortal: true}}
+            MenuProps={{ slotProps:{ 
+              paper:{sx:{width:"300px", height:"175px", padding:"8px 2px 8px 0px",display:"flex", justifyContent:"center", alignItems:"center"}}
+              }, 
+              MenuListProps: { sx: { bgcolor: "none", display:"flex", flexWrap:"wrap", justifyContent:"center", alignItems:"center" } }, 
+              disablePortal: true, 
+            }}
           >
-            <Box sx={{display:"flex", width:"300px", height:"210px", flexWrap:"wrap"}}>
             {MONTHS.map((month, idx) => (
-              <Box component={MenuItem} key={month} value={month}  sx={{width:"70px", height:"70px"}}>
+              <MenuItem key={month} value={idx} sx={{width:"56px", height:"36px", mx:"6px", p:"0px", display:"flex", justifyContent:"center", flexDirection:"column", alignItems:"center"}}>
                 {month}
-              </Box>
+            </MenuItem>
             ))}
-            </Box>
           </Select>
         </FormControl>
       </Grid>
@@ -87,6 +88,9 @@ const Header: React.FunctionComponent<HeaderProps> = ({
           <Select
             value={getYear(date)}
             onChange={handleYearChange}
+            slotProps={{
+
+            }}
             MenuProps={{ disablePortal: true }}
           >
             {generateYears(date, 30).map((year) => (
