@@ -4,7 +4,7 @@ import { Box } from '@mui/material';
 import DateRangePicker from './DateRangePicker';
 
 // eslint-disable-next-line no-unused-vars
-import { DateRange, DefinedRange } from '../types';
+import { DateRange, DefinedRange } from '../';
 
 export interface DateRangePickerWrapperProps {
   open: boolean;
@@ -47,8 +47,6 @@ const DateRangePickerWrapper: React.FunctionComponent<DateRangePickerWrapperProp
           <Box
             sx={{
               position: 'fixed',
-              height: '100vh',
-              width: '100vw',
               bottom: 0,
               zIndex: 0,
               right: 0,

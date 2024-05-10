@@ -23,38 +23,49 @@ export const getDefaultRanges = (date: Date, locale?: Locale): DefinedRange[] =>
     endDate: addDays(date, -1),
   },
   {
-    label: 'This Week',
-    startDate: startOfWeek(date, {locale}),
-    endDate: endOfWeek(date, {locale}),
-  },
-  {
     label: 'Last Week',
     startDate: startOfWeek(addWeeks(date, -1), {locale}),
     endDate: endOfWeek(addWeeks(date, -1), {locale}),
-  },
-  {
-    label: 'Last 7 Days',
-    startDate: addWeeks(date, -1),
-    endDate: date,
-  },
-  {
-    label: 'This Month',
-    startDate: startOfMonth(date),
-    endDate: endOfMonth(date),
   },
   {
     label: 'Last Month',
     startDate: startOfMonth(addMonths(date, -1)),
     endDate: endOfMonth(addMonths(date, -1)),
   },
-  {
-    label: 'This Year',
-    startDate: startOfYear(date),
-    endDate: endOfYear(date),
-  },
+  // {
+  //   label: 'Last Semester',
+  //   startDate: startOfYear(date),
+  //   endDate: endOfYear(date),
+  // },
   {
     label: 'Last Year',
     startDate: startOfYear(addYears(date, -1)),
     endDate: endOfYear(addYears(date, -1)),
   },
+  {
+    label: 'Last 7 days',
+    startDate: addDays(date, -6),
+    endDate: date,
+  },
+  {
+    label: 'Last 30 days',
+    startDate: addDays(date, -29),
+    endDate: date,
+  },
+  {
+    label: 'Last 90 days',
+    startDate: addDays(date, -89),
+    endDate: date,
+  },
+  {
+    label: 'Last 180 days',
+    startDate: addDays(date, -179),
+    endDate: date,
+  },
+  {
+    label: 'Last 365 days',
+    startDate: addDays(date, -364),
+    endDate: date,
+  },
+ 
 ];
