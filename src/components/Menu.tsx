@@ -68,7 +68,7 @@ const Menu: React.FunctionComponent<MenuProps> = (props: MenuProps) => {
     <Paper
       elevation={5}
       square
-      sx={{ height: "415px", width: "752px", boxSizing: "border-box" }}
+      sx={{ height: "415px", width: "752px", boxSizing: "border-box", overflow: 'auto' }}
     >
       <Grid container direction="row" wrap="nowrap">
         <Grid>

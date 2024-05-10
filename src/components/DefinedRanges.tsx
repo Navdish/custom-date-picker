@@ -24,7 +24,7 @@ const DefinedRanges: React.FunctionComponent<DefinedRangesProps> = ({
   setRange,
   selectedRange,
 }: DefinedRangesProps) => (
-  <List>
+  <List >
     {ranges.map((range, idx) => (
       <ListItem button
                 key={idx}
