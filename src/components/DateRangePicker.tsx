@@ -99,13 +99,11 @@ const DateRangePicker: React.FunctionComponent<DateRangePickerProps> = (
   };
 
   const onMonthNavigate = (marker: Marker, action: NavigationAction) => {
-    if (marker === MARKERS.FIRST_MONTH) {
       const firstNew = addMonths(firstMonth, action);
-      if (isBefore(firstNew, secondMonth)) setFirstMonth(firstNew);
-    } else {
+      setFirstMonth(firstNew);
       const secondNew = addMonths(secondMonth, action);
-      if (isBefore(firstMonth, secondNew)) setSecondMonth(secondNew);
-    }
+      setSecondMonth(secondNew);
+    
   };
 
   const onDayHover = (date: Date) => {

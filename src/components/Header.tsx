@@ -3,7 +3,7 @@ import React from 'react';
 import ChevronLeft from '@mui/icons-material/ChevronLeft';
 import ChevronRight from '@mui/icons-material/ChevronRight';
 import {getMonth, getYear, setMonth, setYear} from 'date-fns';
-
+import { Marker, MARKERS } from './Markers';
 
 interface HeaderProps {
   date: Date;
@@ -14,6 +14,7 @@ interface HeaderProps {
   onClickNext: () => void;
   onClickPrevious: () => void;
   locale?: Locale;
+  marker:symbol;
 }
 
 const generateYears = (relativeTo: Date, count: number) => {
@@ -30,7 +31,8 @@ const Header: React.FunctionComponent<HeaderProps> = ({
   prevDisabled,
   onClickNext,
   onClickPrevious,
-  locale
+  locale,
+  marker
 }: HeaderProps) => {
   const MONTHS = typeof locale !== 'undefined'
     ? [...Array(12).keys()].map(d => locale.localize?.month(d, {width: 'abbreviated', context: 'standalone'}))
@@ -59,7 +61,7 @@ const Header: React.FunctionComponent<HeaderProps> = ({
           onClick={onClickPrevious}
           // size="large"
         >
-          <ChevronLeft color={prevDisabled ? 'disabled' : 'action'} />
+          {marker === MARKERS.FIRST_MONTH ?<ChevronLeft color={prevDisabled ? 'disabled' : 'action'} />: null}
         </IconButton>
       </Grid>
       <Grid item>
@@ -115,7 +117,7 @@ const Header: React.FunctionComponent<HeaderProps> = ({
           onClick={onClickNext}
           // size="large"
         >
-          <ChevronRight color={nextDisabled ? 'disabled' : 'action'} />
+         {marker === MARKERS.SECOND_MONTH ? <ChevronRight color={nextDisabled ? 'disabled' : 'action'} />: null}
         </IconButton>
       </Grid>
     </Grid>
