@@ -1,7 +1,8 @@
 import React from "react";
 import { Paper, Grid, Typography } from "@mui/material";
 import {
-  getDate, isSameMonth, isToday, format, isWithinInterval
+  getDate, isSameMonth, isToday, format, isWithinInterval,
+  getDay
 } from "date-fns";
 import {
   chunks, getDaysInMonth, isStartOfRange, isEndOfRange, inDateRange, isRangeSameDay
@@ -106,22 +107,24 @@ const Month: React.FunctionComponent<MonthProps> = (props: MonthProps) => {
                 const isEnd = isEndOfRange(dateRange, day);
                 const isRangeOneDay = isRangeSameDay(dateRange);
                 const highlighted = inDateRange(dateRange, day) || helpers.inHoverRange(day);
-
+                const today = new Date();
                 return (
                   <Day
-                    key={format(day, "dd-MM-yyyy")}
+                    key={format(day, "dd/MM/yyyy")}
                     filled={isStart || isEnd}
                     outlined={isToday(day)}
                     highlighted={highlighted && !isRangeOneDay}
                     disabled={
                       !isSameMonth(date, day)
                       || !isWithinInterval(day, { start: minDate, end: maxDate })
+                      || ((day.getTime()) > (today.getTime()))
                     }
                     startOfRange={isStart && !isRangeOneDay}
                     endOfRange={isEnd && !isRangeOneDay}
                     onClick={() => handlers.onDayClick(day)}
                     onHover={() => handlers.onDayHover(day)}
                     value={getDate(day)}
+                    dayValue={getDay(day)}
                   />
                 );
               })}

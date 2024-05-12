@@ -20,10 +20,8 @@ interface HeaderProps {
 
 const generateYears = (relativeTo: Date, count: number) => {
   const currentYear = getYear(new Date());
-  console.log(currentYear);
   const limitYear = 2015;
   count = currentYear - limitYear;
-  // console.log("last", last, typeof(last))
   return Array(count)
     .fill(0)
     .map((_y, i) =>  limitYear +i ); // TODO: make part of the state
@@ -56,7 +54,6 @@ const Header: React.FunctionComponent<HeaderProps> = ({
   const handleYearChange = (event: SelectChangeEvent<number>) => {
     setDate(setYear(date, parseInt(event.target.value as string, 10)));
   };
-  console.log("getMonth(date)", getMonth(date), FULLMONTH[0])
   return (
     <Grid container justifyContent="space-between" alignItems="center">
       

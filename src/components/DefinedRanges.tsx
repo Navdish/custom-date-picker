@@ -1,7 +1,7 @@
 import React from 'react';
 import {List, ListItem, ListItemText} from '@mui/material';
 import {isSameDay} from 'date-fns';
-import {DateRange, DefinedRange} from '../types';
+import {DateRange, DefinedRange} from '../../types/types';
 
 type DefinedRangesProps = {
   // eslint-disable-next-line no-unused-vars
