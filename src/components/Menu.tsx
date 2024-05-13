@@ -99,7 +99,7 @@ const Menu: React.FunctionComponent<MenuProps> = (props: MenuProps) => {
             </Grid>
           </Grid>
           <Divider />
-          <Grid container direction="row" justifyContent="center" wrap="nowrap">
+          <Grid container direction="row" justifyContent="center" wrap="nowrap" height={"339px"}>
             <Month
               {...commonProps}
               value={firstMonth}
@@ -118,11 +118,11 @@ const Menu: React.FunctionComponent<MenuProps> = (props: MenuProps) => {
               locale={locale}
             />
           </Grid>
-          <Grid container justifyContent="flex-end" >
-            <Button sx={{color:"#424242"}} onClick={()=> { setDateRange({})}}>Clean</Button>
-            <Button >Select</Button>
-          </Grid>
           
+          <Grid container justifyContent="flex-end" >
+            <Button className="clean-btn" onClick={()=> { setDateRange({})}}>Clean</Button>
+            <Button className="select-btn">Select</Button>
+          </Grid>
         </Grid>
       </Grid>
     </Paper>
