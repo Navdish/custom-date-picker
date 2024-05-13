@@ -11,7 +11,7 @@
   color: var(--neutral-neutral-800, #424242) !important;
   font-feature-settings: "clig" off, "liga" off !important;
   font-family: "Open Sans" !important;
-  font-size: 16px !important;
+  font-size: 14px !important;
   font-style: normal !important;
   font-weight: 600 !important;
   line-height: 150% !important; /* 24px */
@@ -39,15 +39,15 @@
   color: var(--neutral-neutral-800, #424242) !important;
   font-feature-settings: "clig" off, "liga" off !important;
   font-family: "Open Sans" !important;
-  font-size: 16px !important;
+  font-size: 14px !important;
   font-style: normal !important;
-  font-weight: 500 !important;
+  font-weight: 400 !important;
   line-height: 150% !important; /* 24px */
   letter-spacing: 0.15px !important;
 }
 
-.MonthSelect-MenuItem:active {
-  background-color: #424242;
+.MonthSelect-MenuItem{
+  border-radius: 20px;
 }
 
 .selected-year {
@@ -57,7 +57,7 @@
   color: var(--neutral-neutral-800, #424242) !important;
   font-feature-settings: "clig" off, "liga" off !important;
   font-family: "Open Sans" !important;
-  font-size: 16px !important;
+  font-size: 14px !important;
   font-style: normal !important;
   font-weight: 600 !important;
   line-height: 150% !important; /* 24px */

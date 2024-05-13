@@ -121,7 +121,7 @@ const Menu: React.FunctionComponent<MenuProps> = (props: MenuProps) => {
           
           <Grid container justifyContent="flex-end" >
             <Button className="clean-btn" onClick={()=> { setDateRange({})}}>Clean</Button>
-            <Button className="select-btn">Select</Button>
+            <Button className="select-btn" onClick={() => {console.log(dateRange, "datesssssss")}}>Select</Button>
           </Grid>
         </Grid>
       </Grid>

@@ -70,6 +70,7 @@ const Month: React.FunctionComponent<MonthProps> = (props: MonthProps) => {
           marker={marker}
         />
 
+
         <Grid
           item
           container

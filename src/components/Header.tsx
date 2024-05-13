@@ -135,6 +135,18 @@ const Header: React.FunctionComponent<HeaderProps> = ({
             onChange={handleMonthChange}
             MenuProps={
               {
+                
+                sx: {
+                  "&& .Mui-selected": {
+                    borderRadius: "20px",
+                    backgroundColor: "#01579B",
+                    color:"#fff !important",
+                    ":hover": {
+                      backgroundColor: "#01579B",
+                      color:"#fff !important",
+                    }
+                  }
+                },
                 className: 'MenuProps',
               slotProps: {
                 paper: {
