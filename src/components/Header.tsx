@@ -123,7 +123,7 @@ const Header: React.FunctionComponent<HeaderProps> = ({
       <Grid item>
         <FormControl variant="standard" >
           <Select
-            className="Month-Select"
+            
             disableUnderline={true}
             IconComponent={React.Fragment}
             value={getMonth(date)}
