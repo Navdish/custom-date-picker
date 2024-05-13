@@ -119,7 +119,7 @@ const Menu: React.FunctionComponent<MenuProps> = (props: MenuProps) => {
             />
           </Grid>
           <Grid container justifyContent="flex-end" >
-            <Button sx={{color:"#424242"}}>Clean</Button>
+            <Button sx={{color:"#424242"}} onClick={()=> { setDateRange({})}}>Clean</Button>
             <Button >Select</Button>
           </Grid>
           

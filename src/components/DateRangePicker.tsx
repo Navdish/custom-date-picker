@@ -83,8 +83,8 @@ const DateRangePicker: React.FunctionComponent<DateRangePickerProps> = (
       setDateRange(emptyRange);
       onChange(emptyRange);
 
-      setFirstMonth(today);
-      setSecondMonth(addMonths(firstMonth, 1));
+      setSecondMonth(today);
+      setFirstMonth(addMonths(secondMonth, -1));
     }
   };
 
@@ -131,7 +131,7 @@ const DateRangePicker: React.FunctionComponent<DateRangePickerProps> = (
     onDayHover,
     onMonthNavigate,
   };
-
+  
   return open ? (
     <Menu
       dateRange={dateRange}
