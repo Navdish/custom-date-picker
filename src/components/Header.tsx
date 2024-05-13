@@ -127,7 +127,7 @@ const Header: React.FunctionComponent<HeaderProps> = ({
           </Select>
         </FormControl>
 
-        {/* <Typography>{format(date, "MMMM YYYY")}</Typography> */}
+
       </Grid>
       <Grid item sx={{ padding: '5px' }}>
         <IconButton
@@ -142,7 +142,6 @@ const Header: React.FunctionComponent<HeaderProps> = ({
             || (month >= getMonth(new Date()) && year >= getYear(new Date()))
           }
           onClick={onClickNext}
-          // size="large"
         >
          {marker === MARKERS.SECOND_MONTH ? <ChevronRight color={nextDisabled ? 'disabled' : 'action'} />: null}
         </IconButton>

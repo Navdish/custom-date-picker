@@ -1,0 +1,32 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
+
+.calender-wrapper {
+  height: 415px;
+  width: 752px;
+  box-sizing: border-box;
+  overflow: auto;
+}
+
+.side-filters {
+  width: 148px;
+  border-radius: 6px 0px 0px 6px;
+  border-top: 1px solid var(--Neutral-Neutral-300, #e0e0e0);
+  border-bottom: 1px solid var(--Neutral-Neutral-300, #e0e0e0);
+  border-left: 1px solid var(--Neutral-Neutral-300, #e0e0e0);
+  background: var(--Neutral-Neutral-50, #fafafa);
+}
+
+.main-calendar {
+  width: 604px;
+}
+
+.date-text {
+  color: var(--neutral-neutral-800, #424242);
+  font-feature-settings: "clig" off, "liga" off;
+  font-family: "Open Sans";
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%;
+  letter-spacing: 0.15px;
+}

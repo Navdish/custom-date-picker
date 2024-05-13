@@ -12,6 +12,7 @@ import {
   NavigationAction,
 } from "../../types/types";
 import { MARKERS } from "./Markers";
+import './Menu.css'
 
 interface MenuProps {
   dateRange: DateRange;
@@ -68,31 +69,31 @@ const Menu: React.FunctionComponent<MenuProps> = (props: MenuProps) => {
     <Paper
       elevation={5}
       square
-      sx={{ height: "415px", width: "752px", boxSizing: "border-box", overflow: 'auto' }}
+      className="calender-wrapper"
     >
       <Grid container direction="row" wrap="nowrap">
-        <Grid>
+        <Grid className="side-filters">
           <DefinedRanges
             selectedRange={dateRange}
             ranges={ranges}
             setRange={setDateRange}
           />
         </Grid>
-        <Divider orientation="vertical" flexItem />
-        <Grid>
-          <Grid container sx={{ padding: "20px 70px" }} alignItems="center">
+        
+        <Grid className="main-calendar">
+          <Grid container sx={{ padding: "5px 60px" }} alignItems="center"  >
             <Grid item sx={{ flex: 1, textAlign: "center" }}>
-              <Typography variant="subtitle1">
+              <Typography variant="subtitle1" className="date-text">
                 {startDate
                   ? format(startDate, "dd MMMM yyyy", { locale })
                   : "Start Date"}
               </Typography>
             </Grid>
             <Grid item sx={{ flex: 1, textAlign: "center" }}>
-              <ArrowRightAlt color="action" />
+              <ArrowRightAlt sx={{color: '#787878' }} />
             </Grid>
             <Grid item sx={{ flex: 1, textAlign: "center" }}>
-              <Typography variant="subtitle1">
+              <Typography variant="subtitle1" className="date-text">
                 {endDate
                   ? format(endDate, "dd MMMM yyyy", { locale })
                   : "End Date"}

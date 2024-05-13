@@ -2,9 +2,10 @@ import React from 'react';
 
 import { Box } from '@mui/material';
 import DateRangePicker from './DateRangePicker';
+import { DateRange, DefinedRange } from '../../types';
 
 // eslint-disable-next-line no-unused-vars
-import { DateRange, DefinedRange } from '../';
+// import { DateRange, DefinedRange } from '../';
 
 export interface DateRangePickerWrapperProps {
   open: boolean;

@@ -38,6 +38,7 @@ const DefinedRanges: React.FunctionComponent<DefinedRangesProps> = ({
                     }
                   }]}
       >
+        
         <ListItemText
           primaryTypographyProps={{
             variant: 'body2',
