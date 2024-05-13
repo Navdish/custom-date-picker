@@ -109,7 +109,7 @@ const Menu: React.FunctionComponent<MenuProps> = (props: MenuProps) => {
               marker={MARKERS.FIRST_MONTH}
               locale={locale}
             />
-            <Divider orientation="vertical" flexItem />
+            
             <Month
               {...commonProps}
               value={secondMonth}
