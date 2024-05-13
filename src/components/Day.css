@@ -1,0 +1,13 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
+
+.date-value {
+  
+  text-align: center !important;
+  font-feature-settings: "clig" off, "liga" off !important;
+  font-family: "Open Sans" !important;
+  font-size: 14px !important;
+  font-style: normal !important;
+  font-weight: 400 !important;
+  line-height: 143% !important; /* 20.02px */
+  letter-spacing: 0.17px !important;
+}

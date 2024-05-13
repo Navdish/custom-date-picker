@@ -67,7 +67,6 @@ const Menu: React.FunctionComponent<MenuProps> = (props: MenuProps) => {
   };
   return (
     <Paper
-      square
       className="calender-wrapper"
     >
       <Grid container direction="row" wrap="nowrap" >

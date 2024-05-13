@@ -1,6 +1,6 @@
 import React from 'react';
 import { IconButton, Typography, Box } from '@mui/material';
-
+import './Day.css'
 interface DayProps {
   filled?: boolean;
   outlined?: boolean;
@@ -42,7 +42,7 @@ const Day: React.FunctionComponent<DayProps> = ({
           height: '36px',
           width: '36px',
           padding: 0,
-          border: (theme) => !disabled && outlined ? `1px solid ${theme.palette.primary.dark}` : undefined,
+          border: (theme) => !disabled && outlined ? `1px solid #E0E0E0` : undefined,
           ...(!disabled && filled ? {
             '&:hover': {
               backgroundColor: "#01579B",
@@ -57,12 +57,13 @@ const Day: React.FunctionComponent<DayProps> = ({
       >
         <Typography
           sx={{
-            lineHeight: 1.6,
             color: (theme) => !disabled
               ? (filled ? theme.palette.primary.contrastText : theme.palette.text.primary)
               : theme.palette.text.secondary,
           }}
-          variant="body2"
+
+          className='date-value'
+          
         >
           {value}
         </Typography>
