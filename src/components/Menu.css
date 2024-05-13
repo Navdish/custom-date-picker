@@ -27,14 +27,14 @@
 }
 
 .date-text {
-  color: var(--neutral-neutral-800, #424242);
-  font-feature-settings: "clig" off, "liga" off;
-  font-family: "Open Sans";
-  font-size: 14px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 150%;
-  letter-spacing: 0.15px;
+  color: var(--neutral-neutral-800, #424242) !important;
+  font-feature-settings: "clig" off, "liga" off !important;
+  font-family: "Open Sans" !important;
+  font-size: 14px !important;
+  font-style: normal !important;
+  font-weight: 400 !important;
+  line-height: 150% !important;
+  letter-spacing: 0.15px !important;
 }
 
 .select-btn {
@@ -44,13 +44,13 @@
   align-items: center;
   gap: 8px;
   color: #01579B;
-  font-family: "Roboto" sans-serif;
-  font-size: 14px;
-  font-style: normal;
-  font-weight: 500;
-  line-height: 24px;
-  letter-spacing: 0.4px;
-  text-transform: uppercase;
+  font-family: "Roboto" sans-serif !important ;
+  font-size: 14px !important;
+  font-style: normal !important;
+  font-weight: 500 !important;
+  line-height: 24px !important;
+  letter-spacing: 0.4px !important;
+  text-transform: uppercase !important;
 }
 
 .clean-btn {
@@ -60,14 +60,14 @@
   align-items: center;
   gap: 8px;
   color: #424242;
-  font-family: "Roboto" sans-serif;
-  font-size: 14px;
-  font-style: normal;
-  font-weight: 500;
-  line-height: 24px;
-  letter-spacing: 0.4px;
-  text-transform: uppercase;
+  font-family: "Roboto" sans-serif !important;
+  font-size: 14px !important;
+  font-style: normal !important;
+  font-weight: 500 !important;
+  line-height: 24px !important;
+  letter-spacing: 0.4px !important;
+  text-transform: uppercase !important;
 }
 .clean-btn:hover {
-  background: none;
+  background: none !important;
 }
