@@ -67,11 +67,10 @@ const Menu: React.FunctionComponent<MenuProps> = (props: MenuProps) => {
   };
   return (
     <Paper
-      elevation={5}
       square
       className="calender-wrapper"
     >
-      <Grid container direction="row" wrap="nowrap">
+      <Grid container direction="row" wrap="nowrap" >
         <Grid className="side-filters">
           <DefinedRanges
             selectedRange={dateRange}

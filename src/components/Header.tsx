@@ -54,7 +54,7 @@ const Header: React.FunctionComponent<HeaderProps> = ({
   };
   const month = getMonth(date);
   const year = getYear(date);
-  console.log("locale", month, year, getMonth(new Date()), getYear(new Date()));
+  
   return (
     <Grid container justifyContent="space-between" alignItems="center">
       

@@ -49,9 +49,9 @@ const Day: React.FunctionComponent<DayProps> = ({
           border: (theme) => !disabled && outlined ? `1px solid ${theme.palette.primary.dark}` : undefined,
           ...(!disabled && filled ? {
             '&:hover': {
-              backgroundColor: "#1565C0",
+              backgroundColor: "#01579B",
             },
-            backgroundColor:"#1565C0"
+            backgroundColor:"#01579B"
           } : {}),
           
         }}
