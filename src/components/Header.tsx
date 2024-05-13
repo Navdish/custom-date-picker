@@ -20,11 +20,10 @@ interface HeaderProps {
 
 const generateYears = (relativeTo: Date, count: number) => {
   const currentYear = getYear(new Date());
-  const limitYear = 2015;
-  count = currentYear - limitYear;
+  const startYear = currentYear - count +1;
   return Array(count)
     .fill(0)
-    .map((_y, i) =>  limitYear +i ); // TODO: make part of the state
+    .map((_y, i) =>  startYear +i ); // TODO: make part of the state
     
 };
 
@@ -44,7 +43,6 @@ const Header: React.FunctionComponent<HeaderProps> = ({
 
   const FULLMONTH: any = {0: 'January', 1: "February", 2: 'March', 3: 'April', 4: 'May', 5: 'June', 6:'July', 7: 'August', 8: 'September', 9: 'October', 10: 'November', 11: 'December'}
     
-  const months = ['Jan', "February",'March', 'April',  'May',  'June', 'July',  'August',  'September', 'October','November', 'December']
 
   const handleMonthChange = (event: React.MouseEvent<HTMLButtonElement, MouseEvent> | any) => {
     setDate(setMonth(date, parseInt(event.target.value as string, 10)));
@@ -54,6 +52,9 @@ const Header: React.FunctionComponent<HeaderProps> = ({
   const handleYearChange = (event: SelectChangeEvent<number>) => {
     setDate(setYear(date, parseInt(event.target.value as string, 10)));
   };
+  const month = getMonth(date);
+  const year = getYear(date);
+  console.log("locale", month, year, getMonth(new Date()), getYear(new Date()));
   return (
     <Grid container justifyContent="space-between" alignItems="center">
       
@@ -92,7 +93,9 @@ const Header: React.FunctionComponent<HeaderProps> = ({
             }}
           >
             {MONTHS.map((month, idx) => (
-              <MenuItem key={month} value={idx} className='MonthSelect-MenuItem'>
+              <MenuItem key={month} value={idx} disabled={
+                idx>getMonth(new Date()) && getYear(date)=== getYear(new Date())
+              } className='MonthSelect-MenuItem'>
                 {month}
             </MenuItem>
             ))}
@@ -134,7 +137,10 @@ const Header: React.FunctionComponent<HeaderProps> = ({
               background: 'none',
             },
           }}
-          disabled={nextDisabled}
+          disabled={
+            nextDisabled
+            || (month >= getMonth(new Date()) && year >= getYear(new Date()))
+          }
           onClick={onClickNext}
           // size="large"
         >
