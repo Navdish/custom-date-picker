@@ -125,7 +125,7 @@ const Header: React.FunctionComponent<HeaderProps> = ({
           <Select
             className="Month-Select"
             disableUnderline={true}
-            IconComponent={false}
+            IconComponent={React.Fragment}
             value={getMonth(date)}
             renderValue={(selected) => (
               <Box className="selected-month" sx={{  }}>

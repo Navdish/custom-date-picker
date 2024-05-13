@@ -1,7 +1,7 @@
 "use client"
 import React from "react";
 import  DateRangePicker from "../components/DateRangePicker";
-import { DateRange } from "../../dist";
+import { DateRange } from "../../types/types";
 
 export default function Home() {
   const [open, setOpen] = React.useState(true);
