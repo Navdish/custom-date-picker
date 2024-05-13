@@ -55,18 +55,18 @@ const Header: React.FunctionComponent<HeaderProps> = ({
           })
         )
       : [
-          "Jan",
-          "Feb",
-          "Mar",
-          "Apr",
-          "May",
-          "June",
-          "July",
-          "Aug",
-          "Sept",
-          "Oct",
-          "Nov",
-          "Dec",
+          "JAN",
+          "FEB",
+          "MAR",
+          "APR",
+          "MAY",
+          "JUNE",
+          "JULY",
+          "AUG",
+          "SEPT",
+          "OCT",
+          "NOV",
+          "DEC",
         ];
 
   const FULLMONTH: any = {
@@ -121,29 +121,24 @@ const Header: React.FunctionComponent<HeaderProps> = ({
         </IconButton>
       </Grid>
       <Grid item>
-        <FormControl variant="standard">
+        <FormControl variant="standard" >
           <Select
             className="Month-Select"
             disableUnderline={true}
             IconComponent={false}
             value={getMonth(date)}
             renderValue={(selected) => (
-              <Box sx={{ display: "flex", flexWrap: "wrap", gap: 0.5 }}>
+              <Box className="selected-month" sx={{  }}>
                 {FULLMONTH[selected]}
               </Box>
             )}
             onChange={handleMonthChange}
-            MenuProps={{
+            MenuProps={
+              {
+                className: 'MenuProps',
               slotProps: {
                 paper: {
-                  sx: {
-                    width: "300px",
-                    height: "175px",
-                    padding: "8px 2px 8px 0px",
-                    display: "flex",
-                    justifyContent: "center",
-                    alignItems: "center",
-                  },
+                  className: 'MenuList-paper',
                 },
               },
               MenuListProps: { className: "MonthSelect-MenuListProps" },
@@ -166,27 +161,20 @@ const Header: React.FunctionComponent<HeaderProps> = ({
           </Select>
         </FormControl>
 
-        <FormControl variant="standard">
+        <FormControl variant="standard" >
           <Select
             disableUnderline={true}
             value={getYear(date)}
             onChange={handleYearChange}
             renderValue={(selected) => (
-              <Box sx={{ display: "flex", flexWrap: "wrap", gap: 0.5 }}>
+              <Box className="selected-year">
                 {selected}
               </Box>
             )}
             MenuProps={{
               slotProps: {
                 paper: {
-                  sx: {
-                    width: "300px",
-                    height: "175px",
-                    padding: "8px 2px 8px 0px",
-                    display: "flex",
-                    justifyContent: "center",
-                    alignItems: "center",
-                  },
+                  className: 'MenuList-paper',
                 },
               },
               MenuListProps: { className: "YearSelect-MenuListProps" },
