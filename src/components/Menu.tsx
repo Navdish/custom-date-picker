@@ -1,6 +1,6 @@
 /* eslint-disable object-curly-newline */
 import React from "react";
-import { Divider, Grid, Paper, Typography } from "@mui/material";
+import { Button, Divider, Grid, Paper, Typography } from "@mui/material";
 import { differenceInCalendarMonths, format } from "date-fns";
 import ArrowRightAlt from "@mui/icons-material/ArrowRightAlt";
 import Month from "./Month";
@@ -119,6 +119,11 @@ const Menu: React.FunctionComponent<MenuProps> = (props: MenuProps) => {
               locale={locale}
             />
           </Grid>
+          <Grid container justifyContent="flex-end" >
+            <Button sx={{color:"#424242"}}>Clean</Button>
+            <Button >Select</Button>
+          </Grid>
+          
         </Grid>
       </Grid>
     </Paper>
